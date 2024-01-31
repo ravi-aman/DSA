@@ -36,7 +36,6 @@ int main() {
     }
 
 
-
     float r;
     while (1) {  
         printf("\n\nEnter the radi us of circle: ");
