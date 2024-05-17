@@ -26,13 +26,10 @@ cout<<"this is cross pattern ";
     {
         for (int j = 0; j < a; j ++)
         {
-            if (i==j||i==(a-j))
-            {
-                cout<<"* ";
-            }else{
-                cout<<" ";
-            }
-            special
+            cout<<a;
+            //flipping
+            if(a==0)a=1;
+            else a=0;
         }
         cout<<"\n";
         
