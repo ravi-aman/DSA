@@ -6,9 +6,8 @@ int main()
     printf("enter side : ");
     cin >> a;
     int k = 0;
-    cout << "floyed triangle    ......";
-    for (int i = 0; i <=a; i++)
-
+    cout << "Binary triangle    ......";
+    for (int i = 0; i <= a; i++)
     {
         if (i % 2 == 0)
             k = 0;
@@ -16,7 +15,7 @@ int main()
             k = 1;
         for (int j = 0; j <= i; j++)
         {
-            cout << k<<" ";
+            cout << k << " ";
             // fliping
             if (k == 0)
                 k = 1;
@@ -25,6 +24,17 @@ int main()
         }
         cout << "\n";
     }
-
+    cout << "Methode 2 for Binary triangle    ......";
+    for (int i = 0; i <= a; i++)
+    {
+        for (int j = 0; j <= i; j++)
+        {
+            if ((i + j) % 2 == 0)
+                cout << 0;
+            else
+                cout << 1;
+        }
+        cout << "\n";
+    }
     return 0;
 }
