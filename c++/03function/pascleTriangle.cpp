@@ -7,7 +7,7 @@ int f(int fact)
     {
         product = (fact - i) * product; // 1
     }
-    return product;
+    return product; 
 }
 
 int combination(int n, int r)
