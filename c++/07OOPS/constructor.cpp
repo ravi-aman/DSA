@@ -3,18 +3,19 @@
 using namespace std;
 class bike
 {
-private:
 public:
     int tyreSize;
     // default constructor
-    bike()
+    bike(int tryeSize)
     {
+        this->tyreSize=tyreSize;
         cout<<"constructor call hua he ";
     }
 };
 
 int main()
 {
-    bike tvs;
+    bike tvs(5);
+    cout<<tvs.tyreSize;
     return 0;
 }
