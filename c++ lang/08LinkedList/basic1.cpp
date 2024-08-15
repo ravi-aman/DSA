@@ -11,7 +11,7 @@ public:
     // Default constructor
     Node() {
         data = 0;
-        next = nullptr;
+        next = NULL;
     }
 
     // Parameterised Constructor
