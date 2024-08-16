@@ -14,15 +14,14 @@ public:
     }
 };
 
+void recursiveDisplay(Node *l1)
+{
+    Node *temp = l1;
+    if (temp == NULL)
+        return;
+    cout << temp->value << " ";
+    recursiveDisplay(temp->next);
 
-
-void recursiveDisplay(Node* l1){
-    Node *temp= l1;
-    if (temp==NULL) return;
-    temp =temp->next;
-    cout<<temp->value<<" ";
-    recursiveDisplay(temp);
-    
 }
 int main()
 {
