@@ -30,19 +30,20 @@ public:
             head = new Node(value);
             tail = head;
         }
+
         else
         {
             tail->next = new Node(value);
             tail = tail->next;
         }
     }
-    void inserAtBegin(
-        int value) {
+    void inserAtBegin(int value)
+    {
         Node *temp = new Node(value);
-        
-
-        
+        temp->next = head;
+        head = temp;
     };
+
     void print()
     {
         Node *temp = head;
@@ -62,7 +63,7 @@ int main()
     l.add(6);
     l.add(7);
     l.add(7);
-
+    l.inserAtBegin(45);
     l.print();
-    return 0;
+    l.inserAtBegin(45);
 }
