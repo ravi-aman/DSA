@@ -37,12 +37,29 @@ public:
             tail = tail->next;
         }
     }
+void display(){
+    Node* temp=
+    while (temp->next==NULL)
+    {
+        /* code */
+    }
+    
+}
+
     void inserAtBegin(int value)
     {
         Node *temp = new Node(value);
         temp->next = head;
         head = temp;
     };
+    void deleteat(int value){
+        // if ()
+        // {
+        //     /* code */
+        // }
+        
+        
+    }
 
     void print()
     {
