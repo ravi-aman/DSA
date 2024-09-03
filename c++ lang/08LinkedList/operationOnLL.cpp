@@ -37,14 +37,14 @@ public:
             tail = tail->next;
         }
     }
-void display(){
-    Node* temp=
-    while (temp->next==NULL)
+    void display()
     {
-        /* code */
+        Node *temp =new Node;
+            while (temp->next == NULL)
+        {
+            
+        }
     }
-    
-}
 
     void inserAtBegin(int value)
     {
@@ -52,14 +52,13 @@ void display(){
         temp->next = head;
         head = temp;
     };
-    void deleteat(int value){
+    void deleteat(int value)
+    {
         // if ()
         // {
         //     /* code */
         // }
-        
-        
-    }
+    };
 
     void print()
     {
