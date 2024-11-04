@@ -12,7 +12,7 @@ public:
 class LinkedList
 {
 public:
-    static Node *head;
+    Node *head;
     Node *tail;
     LinkedList()
     {
@@ -24,7 +24,7 @@ public:
         Node *temp = new Node(data);
         if (head == NULL)
         {
-            head = temp;
+            head = tail = temp;
         }
         else
         {
@@ -33,10 +33,27 @@ public:
         }
     }
 
+    void insertAtEnd(int data)
+    {
+        Node *temp = new Node(data);
+        if (head == NULL && tail == NULL)
+        {
+            head = tail = temp;
+        }
+        else
+        {
+            tail->next = temp;
+            tail = temp;
+        }
+    }
+
+    void inserttIndex()
+    {
+    
+    
+        }
     friend void display(LinkedList &L);
 };
-
-Node *LinkedList::head = NULL;
 
 void display(LinkedList &ll)
 {
@@ -57,6 +74,8 @@ int main()
     ll.insertAtBegin(35);
     ll.insertAtBegin(36);
     ll.insertAtBegin(336);
+    display(ll);
+    ll.insertAtEnd(78);
     display(ll);
     return 0;
 }
