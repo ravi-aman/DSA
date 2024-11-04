@@ -77,7 +77,6 @@ public:
             size++;
         }
     }
-
     friend void display(LinkedList &L);
 };
 
