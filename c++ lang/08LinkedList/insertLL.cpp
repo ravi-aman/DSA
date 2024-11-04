@@ -14,6 +14,7 @@ class LinkedList
 public:
     Node *head;
     Node *tail;
+    static int size;
     LinkedList()
     {
         head = tail = NULL;
@@ -31,12 +32,13 @@ public:
             temp->next = head;
             head = temp;
         }
+        size++;
     }
 
     void insertAtEnd(int data)
     {
         Node *temp = new Node(data);
-        if (head == NULL && tail == NULL)
+        if (head == NULL)
         {
             head = tail = temp;
         }
@@ -45,15 +47,14 @@ public:
             tail->next = temp;
             tail = temp;
         }
+        size++;
     }
 
-    void inserttIndex()
-    {
-    
-    
-        }
     friend void display(LinkedList &L);
 };
+
+// Define the static member variable
+int LinkedList::size = 0;
 
 void display(LinkedList &ll)
 {
@@ -64,6 +65,7 @@ void display(LinkedList &ll)
         temp = temp->next;
     }
     cout << endl;
+    cout << "Size of linked list: " << LinkedList::size << endl;
 }
 
 int main()
