@@ -15,6 +15,7 @@ public:
     Node *head;
     Node *tail;
     static int size;
+
     LinkedList()
     {
         head = tail = NULL;
@@ -50,10 +51,36 @@ public:
         size++;
     }
 
+    void insertAtIndex(int data, int index)
+    {
+        if (index < 0 || index > LinkedList::size)
+        {
+            cout << "The given index is invalid "<<endl;
+            return;
+        }
+        else if (index == 0)
+            insertAtBegin(data);
+        else if (index == size)
+            insertAtEnd(data);
+        else
+        {
+            Node *t = new Node(data);
+            Node *temp = head;
+            int count = 0;
+            while (count < index - 1)
+            {
+                temp = temp->next;
+                count++;
+            }
+            t->next = temp->next;
+            temp->next = t;
+            size++;
+        }
+    }
+
     friend void display(LinkedList &L);
 };
 
-// Define the static member variable
 int LinkedList::size = 0;
 
 void display(LinkedList &ll)
@@ -78,6 +105,8 @@ int main()
     ll.insertAtBegin(336);
     display(ll);
     ll.insertAtEnd(78);
+    display(ll);
+    ll.insertAtIndex(45, 2);
     display(ll);
     return 0;
 }
