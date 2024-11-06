@@ -55,7 +55,7 @@ public:
     {
         if (index < 0 || index > LinkedList::size)
         {
-            cout << "The given index is invalid "<<endl;
+            cout << "The given index is invalid " << endl;
             return;
         }
         else if (index == 0)
@@ -77,6 +77,7 @@ public:
             size++;
         }
     }
+    
     friend void display(LinkedList &L);
 };
 

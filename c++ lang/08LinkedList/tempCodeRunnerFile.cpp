@@ -1,1 +1,4 @@
-void display(LinkedList &ll)
+
+    }
+    cout << endl;
+    cout << "Size of linked
