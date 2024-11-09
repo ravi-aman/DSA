@@ -34,16 +34,18 @@ ListNode *middleNode(ListNode *head)
     }
     return temp;
 }
-ListNode *middleNode2(ListNode *head)
+ListNode *middleNodeByTwoPointer(ListNode *head)
 {
-    int count=0;
-    ListNode *temp = head;
-    while (temp->next != nullptr)
+
+    ListNode *slow = head;
+    ListNode *fast = head;
+
+    while (fast->next != NULL)
     {
-        temp = temp->next;
-        count=+2;
+        fast = fast->next->next;
+        slow = slow->next;
     }
-    return temp;
+    return slow;
 }
 void display(ListNode *head)
 {
@@ -69,5 +71,7 @@ int main()
     d->next = e;
 
     cout << "Middle Node: " << middleNode(a)->val << endl;
+    cout << "Middle Node by Two pointer : " << middleNodeByTwoPointer(a)->val << endl;
+
     return 0;
 }
