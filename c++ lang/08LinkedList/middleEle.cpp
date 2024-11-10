@@ -60,11 +60,11 @@ void display(ListNode *head)
 
 int main()
 {
-    ListNode *a = new ListNode(1);
-    ListNode *b = new ListNode(2);
+    ListNode *a = new ListNode(5);
+    ListNode *b = new ListNode(4);
     ListNode *c = new ListNode(3);
-    ListNode *d = new ListNode(4);
-    ListNode *e = new ListNode(5);
+    ListNode *d = new ListNode(2);
+    ListNode *e = new ListNode(1);
     a->next = b;
     b->next = c;
     c->next = d;
