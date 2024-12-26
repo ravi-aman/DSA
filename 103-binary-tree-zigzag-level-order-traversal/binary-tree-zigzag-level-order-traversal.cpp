@@ -6,43 +6,31 @@
  *     TreeNode *right;
  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x, left, right) {}
  * };
  */
 class Solution {
 public:
     vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
         vector<vector<int>> result;
-        if (!root) {
-            return result;
+        traverse(root, 0, result);
+        for (int i = 1; i < result.size(); i += 2) {
+            reverse(result[i].begin(), result[i].end());
         }
-
-        queue<TreeNode*> q;
-        q.push(root);
-        bool leftToRight = true;
-
-        while (!q.empty()) {
-            int levelSize = q.size();
-            vector<int> currentLevel(levelSize);
-
-            for (int i = 0; i < levelSize; ++i) {
-                TreeNode* node = q.front();
-                q.pop();
-
-                int index = leftToRight ? i : (levelSize - 1 - i);
-                currentLevel[index] = node->val;
-
-                if (node->left) {
-                    q.push(node->left);
-                }
-                if (node->right) {
-                    q.push(node->right);
-                }
-            }
-            result.push_back(currentLevel);
-            leftToRight = !leftToRight;
-        }
-
         return result;
+    }
+
+private:
+    void traverse(TreeNode* node, int level, vector<vector<int>>& result) {
+        if (!node) return;
+
+        if (result.size() <= level) {
+            result.resize(level + 1);
+        }
+
+        result[level].push_back(node->val);
+
+        traverse(node->left, level + 1, result);
+        traverse(node->right, level + 1, result);
     }
 };
